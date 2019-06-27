@@ -1,24 +1,48 @@
-# README
+# MICRO-REDDIT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To execute this app you have to run
 
-Things you may want to cover:
+```
+$ rails console
+```
 
-* Ruby version
+in your terminal, inside the folder micro-reddt or you can use it like a sandbox with this code.
 
-* System dependencies
+```
+$ rails console --sandbox
+```
 
-* Configuration
+You can create a user
 
-* Database creation
+```
+> user = User.new(name: 'Name LastName', email: 'example@email.com')
+> user.save
+```
 
-* Database initialization
+You have to fill these parameters obligatory:
+* name
+* email
 
-* How to run the test suite
+You can create a post
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+> post = Post.new(title: 'This is the title', body: 'This is the body', user_id: #)
+> post.save
+```
+You have to fill these parameters obligatory:
+* title
+* body
+* user_id
 
-* Deployment instructions
+You can create a comment for a post
 
-* ...
+```
+> comment = Comment.new(body: 'This is the body', user_id: #, post_id: #)
+> comment.save
+```
+You have to fill these parameters obligatory:
+* body
+* user_id
+* post_id
+
+The post is parented to the user and the comment is parented to the post and the commentator.
